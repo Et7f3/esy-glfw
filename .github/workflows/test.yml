@@ -1,0 +1,34 @@
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+        node_version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node_version }} on ${{ matrix.os }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node_version }}
+    - name: dump variable
+      run: echo ${{ github.repository }} ${{ github.repository.name }} GITHUB_REPOSITORY $GITHUB_REPOSITORY CI
+    - uses: Et7f3/esy-actions@latest
+    - name: Building all in Revery
+      run: |
+        esy build dune build @all
+    - name: Building Revery
+      run: |
+        esy build
+    - name: Building test
+      run: |
+        esy build dune build test/test.exe
+      env:
+        CI: true
