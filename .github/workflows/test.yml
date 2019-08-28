@@ -21,14 +21,9 @@ jobs:
     - name: dump variable
       run: echo ${{ github.repository }} ${{ github.repository.name }} GITHUB_REPOSITORY $GITHUB_REPOSITORY CI
     - uses: Et7f3/esy-actions@v1.0.0
-    - name: Building all in Revery
-      run: |
-        esy build dune build @all
-    - name: Building Revery
-      run: |
-        esy build
     - name: Building test
       run: |
-        esy build dune build test/test.exe
+        esy build
+        find .
       env:
         CI: true
