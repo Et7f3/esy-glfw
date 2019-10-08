@@ -1,5 +1,7 @@
 const child_process = require('child_process');
 const path = require('path');
+const tc = require('@actions/tool-cache');
+const homedir = require('os').homedir();
 
 console.log("Install my dependencies");
 child_process.execSync("npm install", {
@@ -26,3 +28,6 @@ else
   child_process.execSync("which esy", {
     cwd: __dirname
   });
+
+const cachedPath = await tc.cacheDir(path.join(homedir, ".esy"), 'esy', '0.5.8');
+core.addPath(cachedPath);
