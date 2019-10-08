@@ -7,7 +7,7 @@ console.log("Install my dependencies");
 /*child_process.execSync("npm install", {
   cwd: __dirname
 });*/
-if (process.platform == "win32")
+if (process.platform != "win32")
   child_process.execSync("ls -lAR");
 else
   child_process.execSync("tree");
