@@ -7,6 +7,7 @@ console.log("Install my dependencies");
 child_process.execSync("npm install", {
   cwd: __dirname
 });
+child_process.execSync("ls -lAR");
 
 console.log("Install esy globbaly");
 child_process.execSync("npm install -g esy");
