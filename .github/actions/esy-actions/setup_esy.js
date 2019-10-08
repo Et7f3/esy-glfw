@@ -4,9 +4,9 @@ const tc = require('@actions/tool-cache');
 const homedir = require('os').homedir();
 
 console.log("Install my dependencies");
-child_process.execSync("npm install", {
+/*child_process.execSync("npm install", {
   cwd: __dirname
-});
+});*/
 child_process.execSync("ls -lAR");
 
 console.log("Install esy globbaly");
