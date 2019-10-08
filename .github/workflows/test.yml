@@ -29,4 +29,4 @@ jobs:
         CI: true
     - name: debug
       run: cat /home/runner/work/esy-glfw/esy-glfw/_build/glfw/CMakeFiles/CMakeOutput.log
-      if: maatrix.os == 'ubuntu-latest'
+      if: matrix.os == 'ubuntu-latest'
