@@ -7,7 +7,11 @@ console.log("Install my dependencies");
 /*child_process.execSync("npm install", {
   cwd: __dirname
 });*/
-child_process.execSync("ls -lAR");
+if (process.platform == "win32")
+  child_process.execSync("ls -lAR");
+else
+  child_process.execSync("tree");
+
 
 console.log("Install esy globbaly");
 child_process.execSync("npm install -g esy");
