@@ -29,5 +29,7 @@ else
     cwd: __dirname
   });
 
-const cachedPath = await tc.cacheDir(path.join(homedir, ".esy"), 'esy', '0.5.8');
-core.addPath(cachedPath);
+(async () => {
+  const cachedPath = await tc.cacheDir(path.join(homedir, ".esy"), 'esy', '0.5.8');
+  core.addPath(cachedPath);
+})();
