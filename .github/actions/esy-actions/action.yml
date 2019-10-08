@@ -1,0 +1,11 @@
+name: 'Setup esy.sh environment'
+description: 'Setup your runner with esy.sh'
+author: 'Elie at OCamlPro'
+inputs:
+  sandbox:
+    description: 'The file that describe the sandbox without .json'
+    required: true
+    default: 'package'
+runs:
+  using: 'node12'
+  main: 'setup_esy.js'

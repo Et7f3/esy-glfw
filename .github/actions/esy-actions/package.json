@@ -1,0 +1,41 @@
+{
+  "name": "esy-actions",
+  "version": "1.0.0",
+  "description": "Setup your runner with esy.sh",
+  "main": "setup_esy.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "@actions/core": "^1.0.0",
+    "@actions/exec": "^1.0.0",
+    "@actions/github": "^1.0.0",
+    "@actions/io": "^1.0.0",
+    "@actions/tool-cache": "^1.1.0"
+  },
+  "devDependencies": {
+    "bs-platform": "^5.0.6"
+  },
+  "scripts": {
+    "start": "node setup_esy.js",
+    "test": "echo no test",
+    "clean": "bsb -clean-world",
+    "build": "bsb -make-world",
+    "watch": "bsb -make-world -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Et7f3/esy-actions.git"
+  },
+  "keywords": [
+    "setup",
+    "esy",
+    "reasonml"
+  ],
+  "author": "Élie at OCamlPro",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Et7f3/esy-actions/issues"
+  },
+  "homepage": "https://github.com/Et7f3/esy-actions#readme"
+}
