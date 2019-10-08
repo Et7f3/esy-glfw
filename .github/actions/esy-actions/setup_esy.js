@@ -36,5 +36,5 @@ else
 
 (async () => {
   const cachedPath = await tc.cacheDir(path.join(homedir, ".esy"), 'esy', '0.5.8');
-  core.addPath(cachedPath);
+  Core.addPath(cachedPath);
 })();
