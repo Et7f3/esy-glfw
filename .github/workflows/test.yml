@@ -21,6 +21,11 @@ jobs:
     - name: dump variable
       run: echo ${{ github.repository }} ${{ github.repository.name }} GITHUB_REPOSITORY $GITHUB_REPOSITORY CI
     - uses: ./.github/actions/esy-actions
+      with:
+        string: 'a'
+        strng2: "e"
+        arrayos: matrix.os
+        array: a, g
     - name: install ubuntu dependencies
       if: matrix.os == 'ubuntu-latest'
       run: |
